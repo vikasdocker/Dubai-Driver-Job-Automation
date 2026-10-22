@@ -1,6 +1,14 @@
 name: Dubai Driver Job Outreach
 
 on:
+  # Safely validate the workflow on relevant commits; push runs are preview-only.
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/job-outreach.yml"
+      - "scripts/prepare_emails.py"
+      - "data/companies.csv"
   workflow_dispatch:
     inputs:
       mode:
@@ -37,8 +45,8 @@ jobs:
 
       - name: Prepare drafts / send if explicitly confirmed
         env:
-          MODE: ${{ inputs.mode }}
-          CONFIRM_SEND: ${{ inputs.confirm_send }}
+          MODE: ${{ github.event_name == 'workflow_dispatch' && inputs.mode || 'preview' }}
+          CONFIRM_SEND: ${{ github.event_name == 'workflow_dispatch' && inputs.confirm_send || 'NO' }}
           SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
           SMTP_APP_PASSWORD: ${{ secrets.SMTP_APP_PASSWORD }}
         run: python scripts/prepare_emails.py
