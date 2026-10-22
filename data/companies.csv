@@ -1,4 +1,4 @@
-company,email,notes
-Dubai Taxi Company,recruitment@dtc.gov.ae,"Lead only; verify address, vacancy, and sponsorship on official DTC channels before sending"
-Rovex Transportation,info@rovex.ae,"General contact lead only; ask whether they recruit India-based drivers and sponsor work visas"
-Moove / Uber fleet partner,dcuae@moove.io,"Lead only; verify current email and fleet partner hiring process"
+company,email,notes,source_url
+Dubai Taxi Company,recruitment@dtc.gov.ae,"Legacy recruitment lead; verify the email and current hiring route. Official careers page currently shows its Future Talent Pool.",https://www.dubaitaxi.ae/en/dtccareers/current-opportunities
+Rovex Transportation,info@rovex.ae,"Official application form says a valid UAE residency visa and UAE light-vehicle licence are required; enquiry asks whether India-based applicants are eligible.",https://rovex.ae/uae-driver-job-application-form/
+Moove / Uber fleet partner,dcuae@moove.io,"Email listed on Uber UAE fleet-partner page; ask whether India-based drivers can be recruited and sponsored.",https://www.uber.com/ae/en/drive/vehicle-solutions/fleet-partners/
